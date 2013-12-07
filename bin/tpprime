@@ -1,0 +1,55 @@
+#!/usr/bin/env ruby
+
+$stdout.sync = true
+
+require 'optparse'
+
+require_relative '../lib/tpprime'
+
+
+# = Parse opts
+
+options = {}
+
+OptionParser.new do |opts|
+  opts.version = "v#{Tpprime::VERSION}"
+  
+  opts.banner = opts.ver
+  
+  opts.separator ""
+  opts.separator "Usage: tpprime [OPTIONS]"
+  
+  opts.on("-s", "--size SIZE", Integer,
+    "Square grid SIZE x SIZE"
+  ) { |o| options[:size] = o }
+  
+  opts.separator ""
+  opts.separator "Examples:"
+  
+  opts.separator [
+    "tpprime -s 10",
+  ].map { |e| "  #{e}" }
+  
+  opts.separator ""
+  
+  opts.on_tail("--help",
+    "Output (this) help and exit"
+  ) do
+    puts opts
+    exit
+  end
+  
+  opts.on_tail("--version",
+    "Output version and exit"
+  ) do
+    puts opts.ver
+    exit
+  end
+end.parse!
+
+
+# = Run app
+
+@app = Tpprime::App.new(options)
+
+puts @app.grid
