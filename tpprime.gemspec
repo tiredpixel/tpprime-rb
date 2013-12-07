@@ -8,8 +8,10 @@ Gem::Specification.new do |spec|
   spec.version       = Tpprime::VERSION
   spec.authors       = ["tiredpixel"]
   spec.email         = ["tp@tiredpixel.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Simple command-line program for displaying multiplication grids of
+prime numbers.}
+  spec.summary       = %q{Simple command-line program for displaying multiplication grids of
+prime numbers.}
   spec.homepage      = ""
   spec.license       = ""
   
