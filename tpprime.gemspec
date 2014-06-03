@@ -8,12 +8,10 @@ Gem::Specification.new do |spec|
   spec.version       = Tpprime::VERSION
   spec.authors       = ["tiredpixel"]
   spec.email         = ["tp@tiredpixel.com"]
-  spec.description   = %q{Simple command-line program for displaying multiplication grids of
-prime numbers.}
-  spec.summary       = %q{Simple command-line program for displaying multiplication grids of
-prime numbers.}
-  spec.homepage      = ""
-  spec.license       = ""
+  spec.summary       = %q{Simple command-line program for displaying multiplication grids of prime numbers.}
+  spec.description   = %q{}
+  spec.homepage      = "https://github.com/tiredpixel/tpprime-rb"
+  spec.license       = "MIT"
   
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
