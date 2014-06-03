@@ -1,4 +1,6 @@
-# Tpprime
+# tpprime (Ruby)
+
+[![Build Status](https://travis-ci.org/tiredpixel/tpprime-rb.png?branch=master)](https://travis-ci.org/tiredpixel/tpprime-rb)
 
 Tpprime is a simple command-line program for displaying multiplication grids of
 prime numbers. Primes are generated using a lazy sequence with a flexible API,
@@ -7,7 +9,14 @@ using prime factorization theory, rather than using division-up-to-square-root
 or refined methods. Although the implemented approach could cause memory issues
 with very large primes, it is very efficient for generating a fixed sequence.
 
-More sleep lost by [tiredpixel](http://www.tiredpixel.com).
+Note that this approach purposely avoids stdlib `Prime`, as the purpose is to
+demonstrate one approach to creating an iterator. It is unlikely that this would
+be beneficial for use in other projects, however; for those, stdlib `Prime` or
+similar is strongly recommended.
+
+This repository has *notebook* status, meaning that it is released in the hope
+it will be useful, but it is not under active development and there are no
+releases planned.
 
 
 ## Example
@@ -69,3 +78,23 @@ Create a new lazy sequence with 100 primes realized:
 Display the 1000-th prime:
 
     puts Tpprime::PrimeSeq.new[999] # zero-indexed
+
+
+## Testing
+
+Tests are written using [minitest](https://github.com/seattlerb/minitest).
+To run all tests:
+
+    rake test
+
+
+## Blessing
+
+May you find peace, and help others to do likewise.
+
+
+## Licence
+
+© [tiredpixel](http://www.tiredpixel.com) 2014.
+It is free software, released under the MIT License, and may be redistributed
+under the terms specified in `LICENSE`.
